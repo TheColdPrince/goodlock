@@ -1,11 +1,7 @@
-# Link Lock
+# GoodLOCK
 
 [Password-protect URLs using AES in the
 browser.](https://thecoldprince.github.io/goodlock)
-
-Link Lock now supports secure, hidden bookmarks via bookmark knocking! Read
-more [here](https://jstrieb.github.io/projects/hidden-bookmarks).
-
 
 
 ## About
@@ -76,9 +72,7 @@ r/programming](https://www.reddit.com/r/programming/comments/i5kpjx/link_lock_is
 The code was written to be read. Please read it, especially if you don't trust
 me to build a secure encryption application. In particular:
 
-- ~~I am a college student, not a security professional – there may be best
-  practices I am not aware of.~~ I have graduated college, and now work for a
-  cybersecurity company. 
+- GoodLOCK is founded upon an open-source project authored by jstrieb, which goes by the name Link-Lock, and can be found on the GitHub platform.
 - Once someone decrypts a link, they can share the original URL as much as they
   want. Only share encrypted links with trusted people.
 - I am not comfortable using JavaScript, and I don't have a firm grasp of the
@@ -113,8 +107,6 @@ me to build a secure encryption application. In particular:
   options (very slowly) by brute force. An example application to brute force
   Link Lock URLs in the browser can be found here:
   <https://thecoldprince.github.io/goodlock/bruteforce>.
-- A parallelized, cross-platform, CPU-based brute forcer can be found here:
-  <https://github.com/jstrieb/bruteforce-link-lock>
 - If you receive a Link Lock URL that you do not trust, decrypt it using this
   interface that does not automatically redirect:
   <https://thecoldprince.github.io/goodlock/decrypt>.
@@ -122,7 +114,7 @@ me to build a secure encryption application. In particular:
 ### Evading Censorship
 
 Link Lock can be used to evade censorship. If you are concerned that sending
-links with the `jstrieb.github.io` domain name will put you at risk, just
+links with the `thecoldprince.github.io` domain name will put you at risk, just
 replace the domain with another. For example, share
 
 ```
@@ -149,51 +141,11 @@ the domain name of the pasted link, only the "fragment" (the part after the
 `#`). So, for example, the Wikipedia link above can be pasted directly in there
 and decrypted without changing the domain.
 
-Using a local copy of [URL Pages](https://github.com/jstrieb/urlpages) is also
-recommended. Entire web pages can be shared safely and secretly this way.
-
 
 
 ## Project Status
 
-This project is actively maintained. If there are no recent commits, it means
-that everything has been running smoothly! Even if the link storage protocol
-is updated, Link Lock is designed to be 100% backwards-compatible, so your
-locked links will never break.
-
-Even if something were to happen to me, and I could not continue to work on
-the project, Link Lock will continue to work as long as my GitHub account is
-open and the [jstrieb.github.io](https://jstrieb.github.io) domain is online.
-
-
-
-## Other Versions & Related Projects
-
-- French translation: [cacheton.site](https://cacheton.site)
-- German translation:
-  [ebildungslabor.github.io/link-lock](https://ebildungslabor.github.io/link-lock/)
-- Polish translation: 
-  [yoursenseicreeper.github.io/link-lock](https://yoursenseicreeper.github.io/link-lock/)
-
-
-
-
-## Acknowledgments
-
-Thank you to those who offered feedback on this program before its release.
-Thanks also to the Hacker News second-chance pool.
-
-Thanks to [@IAmMandatory](https://twitter.com/iammandatory) for discovering a
-reflected XSS vulnerability resulting from allowing non-hypertext protocols in
-the URL. The vulnerability has since been fixed.
-
-Thank you to Guillaume ([@gverdun](https://twitter.com/gverdun)) for
-translating Link Lock into French, and hosting a translated version. Likewise,
-thanks to Nele Hirsch ([@eBildungslabor](https://github.com/eBildungslabor/))
-for translating and hosting a German version, and to Piotr Wereszczyński
-([@YourSenseiCreeper](https://github.com/YourSenseiCreeper)) for translating
-and hosting a Polish version.
-
+This project is actively maintained. 
 
 
 # Support the Project
@@ -203,18 +155,3 @@ There are a few things you can do to support the project:
 - Star the repository and follow me on GitHub
 - Share and upvote on sites like Twitter, Reddit, and Hacker News
 - Report any bugs, glitches, or errors that you find
-- Translate into other languages
-
-These things motivate me to to keep sharing what I build, and they provide
-validation that my work is appreciated! They also help me improve the project.
-Thanks in advance!
-
-If you are insistent on spending money to show your support, I encourage you to
-instead make a generous donation to one of the following organizations. By
-advocating for Internet freedoms, organizations like these help me to feel
-comfortable releasing work publicly on the Web.
-
-- [Electronic Frontier Foundation](https://supporters.eff.org/donate/)
-- [Signal Foundation](https://signal.org/donate/)
-- [Mozilla](https://donate.mozilla.org/en-US/)
-- [The Internet Archive](https://archive.org/donate/index.php)
