@@ -1,27 +1,38 @@
 /**
- * Created by Jacob Strieb
- * May 2020
+ * Created by TheColdPrince/ Jomar Romero Balmores
+ * 14 September 2023
  */
 
-
 /*******************************************************************************
- * Element styles
+ * Reset and Base Styles
  ******************************************************************************/
 
-html {
-  font-family: sans-serif;
-  padding: 10px;
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, ol, li, button, label, summary, input, textarea, code {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Set a base font family and color */
 body {
-  padding: 15px;
-  display: block;
-  margin: auto;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #333; /* Adjust as needed */
+}
+
+/*******************************************************************************
+ * Element Styles
+ ******************************************************************************/
+
+body {
   max-width: 66ch;
+  margin: 0 auto;
+  padding: 15px;
 }
 
 p {
   text-align: justify;
+  line-height: 1.5;
 }
 
 ul, ol {
@@ -33,13 +44,12 @@ ol li {
 }
 
 button {
-  padding: 11px;
-  background: rgb(95, 158, 160);
+  padding: 10px 20px;
+  background: #007AFF; /* Apple's primary color */
   color: white;
-  border: 0.5px solid white;
+  border: none;
   border-radius: 5px;
   margin-top: 5px;
-  margin-right: 5px;
   cursor: pointer;
   font-weight: bold;
   white-space: nowrap;
@@ -47,26 +57,25 @@ button {
 
 label {
   display: block;
-  font-variant: small-caps;
+  font-weight: bold;
   margin-bottom: 5px;
 }
 
 summary {
-  font-variant: small-caps;
+  font-weight: bold;
   margin-bottom: 5px;
   user-select: none;
 }
 
 input, textarea {
   padding: 10px;
-  border: 0.5px solid black;
+  border: 0.5px solid #ccc; /* Light gray border */
   border-radius: 3px;
   margin-bottom: 15px;
-  box-sizing: border-box;
   width: 100%;
   resize: none;
-  font-family: sans-serif;
-  font-size: 0.9em;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1em;
 }
 
 input[type="checkbox"] {
@@ -77,13 +86,13 @@ input[type="checkbox"] {
 hr {
   margin-top: 3em;
   margin-bottom: 3em;
-  border: 0;
-  border-top: 0.5px solid rgba(200, 200, 200, 1);
+  border: none;
+  border-top: 1px solid #ccc; /* Light gray border */
 }
 
 footer hr {
   margin-bottom: 1em;
-  border-top: 0.5px solid black;
+  border-top: 1px solid #333; /* Dark gray border */
 }
 
 footer p {
@@ -100,7 +109,6 @@ code {
   font-family: monospace, monospace;
   padding: 0 3px;
 }
-
 
 /*******************************************************************************
  * Classes
@@ -120,70 +128,64 @@ code {
   right: 0;
 }
 
-
 /* Error area */
 .red-border {
   border: 3px solid red;
   padding: 2em;
+  text-align: center;
+  background-color: #FFEBE6; /* Light red background */
 }
 
 .error, .error p {
-  text-align: center;
+  color: red;
 }
-
 
 /* Password & Confirm Password inputs */
 .split-row {
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
-.password {
-  flex: 1;
-}
-
-.confirm-password {
+.password, .confirm-password {
   flex: 1;
   margin-left: 20px;
 }
-
-
 
 /* Advanced settings */
 #advanced-label {
   cursor: pointer;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .advanced {
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
 }
 
 .advanced .labeled-input {
   display: flex;
-  flex-flow: row-reverse nowrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .advanced .labeled-input label {
-  width: auto;
   margin-right: 20px;
   white-space: nowrap;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .advanced .labeled-input input {
-  width: auto;
   margin-right: 5px;
 }
 
-
 /* Output area */
 .output input {
-  background: rgba(235, 235, 235, 1);
+  background: #EBEBEB; /* Light gray background */
 }
 
 .alert {
@@ -191,39 +193,36 @@ code {
   transition: opacity 0.25s;
 }
 
-
 /* Bookmarks that look like buttons, but different */
 .bookmark {
-  padding: 11px;
+  padding: 10px 20px;
   background: none;
-  color: rgb(95, 158, 160);
-  border: 3px solid;
+  color: #007AFF; /* Apple's primary color */
+  border: 1px solid #007AFF; /* Apple's primary color */
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
   margin-top: 5px;
-  margin-right: 5px;
   cursor: pointer;
   display: inline-block;
-  margin: auto;
   text-align: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .bookmark:hover {
-  background: rgb(95, 158, 160);
+  background: #007AFF; /* Apple's primary color */
   color: white;
-  border: 3px solid rgb(95, 158, 160);
 }
 
 .bookmark[aria-disabled="true"] {
-  background: rgba(235, 235, 235, 1);
-  color: gray;
+  background: #EBEBEB; /* Light gray background */
+  color: #999; /* Light gray text */
 }
 
 /* Buttons on the same line as inputs */
 .inline-button-container {
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
 .inline-button-container * {
