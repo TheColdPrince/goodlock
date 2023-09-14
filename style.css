@@ -25,7 +25,7 @@ body {
  ******************************************************************************/
 
 body {
-  max-width: 66ch;
+  max-width: 86ch;
   margin: 0 auto;
   padding: 15px;
 }
@@ -54,6 +54,19 @@ button {
   font-weight: bold;
   white-space: nowrap;
 }
+
+/* Remove the underline and make the text bold */
+a {
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Apply the zoom-in/out effect on hover */
+a:hover {
+  transform: scale(1.1); /* You can adjust the scale factor as needed */
+}
+
 
 label {
   display: block;
